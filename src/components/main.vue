@@ -84,28 +84,28 @@ export default {
       text: '123'
     }
   },
-  methods: {
-    counters() {
-      const counters = document.querySelector('.counter');
-      counters.forEach(function(counter) {
-        counter.innerText = '0';
-        const updateCounter = function() {
-          const target = +counter.getAttribute('data-targett');
-          const c = +counter.innerText;
-          const increment = target / 200;
-          if(c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout(updateCounter, 0.1)
-          } else {
-            counter.innerText = target
-          }
-        }
-      });
-    }
-  },
-  created() {
-    this.counters()
-  },
+  // methods: {
+  //   counters() {
+  //     const counters = document.querySelector('.counter');
+  //     counters.forEach(function(counter) {
+  //       counter.innerText = '0';
+  //       const updateCounter = function() {
+  //         const target = +counter.getAttribute('data-targett');
+  //         const c = +counter.innerText;
+  //         const increment = target / 200;
+  //         if(c < target) {
+  //           counter.innerText = `${Math.ceil(c + increment)}`;
+  //           setTimeout(updateCounter, 0.1)
+  //         } else {
+  //           counter.innerText = target
+  //         }
+  //       }
+  //     });
+  //   }
+  // },
+  // created() {
+  //   this.counters()
+  // },
 }
 
 

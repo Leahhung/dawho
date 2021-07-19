@@ -1,43 +1,336 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "breakpoint";
+@import "reset";
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap");
+
+// color
+$color1: rgb(214, 151, 16);
+$color2: rgb(224, 3, 3);
+
+*{
+  font-family: 'Noto Serif TC', serif;
+  
 }
 
-.hello{
-  height: 2000px;
-  h3 {
-    margin: 40px 0 0;
+a{
+  color: black;
+  text-decoration: none;
+}
+
+@mixin item {
+    .l{
+      font-size: 70px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      .red-l{
+        color: $color2;
+        font-size: 100px;
+      }
+    }
+    .s{
+      font-size: 40px;
+      letter-spacing: -1px;
+      margin-bottom: 60px;
+    }
+    .m{
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      .percent{
+        font-size: 70px;
+        color: $color2;
+        margin-left: 10px;
+      }
+    }
+    .xs{
+      font-size: 23px;
+      color: gray;
+    }
+    .red-s{
+      font-size: 30px;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      color: $color2;
+      .red-dollar{
+        background-color: darken($color2, 5%);
+        padding: 0px 5px;
+        border-radius: 30px;
+        margin: 0px 10px 15px 0px;
+      }
+      .ms{
+        font-size: 20px;
+      }
+    }
+    .btn{
+      width: 330px;
+      font-size: 40px;
+      letter-spacing: 1px;
+      color:$color1 ;
+      padding: 40px 60px;
+      border: 1px solid $color1;
+      border-radius: 80px;
+    }
   }
-  ul {
-    list-style-type: none;
-    padding: 0;
+
+#navbar{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  .logo{
+  background-image: url('./assets/logo-nav.png');
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position-x: 65px;
+  background-position-y: 10px;
+  width: 343px;
+  height: 124px;
+  display: block;
+  text-indent: -100%;
+  overflow: hidden;
+  white-space: nowrap;
   }
-  li {
-    display: inline-block;
-    margin: 0 10px;
+  .nav-text{
+    font-size: 16px;
+    // margin-top: -20px;
+    ul{
+      display: flex;
+      li{
+        
+        margin: 0px 45px 10px 45px;
+        display: inline-block;
+        width: 130px;
+        font-size: 25px;
+        white-space: nowrap;
+        // text-transform: uppercase;
+        & ::after{
+          margin-bottom: 5px;
+          display: block;
+          content: '';
+          border-bottom: solid 3px black;
+          transform: scaleX(0);
+          transition: transform 250ms ease-in-out;
+        }
+        & :hover::after{
+          transform: scaleX(1);
+        }
+        a{
+          text-align: center;
+          display: block;
+        }
+      }
+    }
   }
-  a {
-    color: #42b983;
+  .nav-btn{
+    display: flex;
+    .btn-y{
+      border-radius: 53px;
+      background-color: rgb(214, 151, 16);
+      box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
+      color: whitesmoke;
+      padding: 22px;
+      margin: 0px 20px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    .btn-wb{
+      border-radius: 40px;
+      border: 1px solid black;
+      box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
+      padding: 18px 17px;
+      margin: 0px 20px;
+      font-size: 25px;
+      cursor: pointer;
+      &:hover{
+       background-color: black;
+       color: whitesmoke; 
+      }
+    }
   }
+}
+
+#mainpage{
+  margin: auto;
+  header{
+    // width: 70vh;
+    // height: 70vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .slogan{
+      text-align: center;
+      margin-top: 100px;
+      img{
+        width: 500px;
+        margin-bottom: 10px;
+      }
+      span{
+        display: block;
+        font-size: 60px;
+        letter-spacing: 13px;
+        font-weight: bold;
+      }
+    }
+    .middle{
+      text-align: start;
+      line-height: 80px;
+      margin-top: 140px;
+      .dollar-sign{
+        font-size: 30px;
+        color: whitesmoke;
+        background-color: darken($color1, 5%);
+        padding: 5px 10px;
+        border-radius: 50%;
+        margin: 20px;
+        
+      }
+      .middle-text{
+        font-size: 40px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+    }
+    .header-btn{
+      width: 400px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      padding: 50px 40px;
+      background-color: $color1;
+      border-radius: 70px;
+      text-align: center;
+      margin-top: 170px;
+    }
+  }
+  main{
+    .item1{
+      height: 100vh;
+      display: flex;
+      margin: 100px;
+      img{
+        width: 1100px;
+        margin-left: 50px;
+      }
+      .item1-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 100px;
+        .item1-btn{
+          margin-top: 150px;
+        }
+        @include item
+        
+      }
+    }
+    .item2{
+      height: 100vh;
+      display: flex;
+      margin: auto;
+      img{
+        width: 1100px;
+      }
+      .item2-left{
+        @include item;
+      }
+    }
+  }
+  footer{
+    .up{
+    }
+    .down{
+      color: whitesmoke;
+      background-color: black;
+      height: 400px;
+      display: flex;
+      .down-left{
+        font-size: 45px;
+        font-weight: bold;
+      }
+      .down-right{
+        font-size: 20px;
+      }
+    }
+
+  }
+  
 }
 
 #rightside{
   position:fixed;
-  right: 0;
-  bottom: 0;
+  right: 150px;
+  bottom: 500px;
   background-color: transparent;
-
+  @include pad{
+    right: 0;
+    bottom: 0;
+  }
   .rightside-up{
+    margin: 0px 35px 35px 0px;
     background-color: rgb(214, 151, 16);
-    color: aliceblue;
+    color: whitesmoke;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(194, 137, 13);
+    }
+    span{
+      text-align: center;
+      position: absolute;
+      top: 37px;
+      left: 45px;
+      line-height: 37px;
+      @include pad{
+        top: 37px;
+        left: 37px;
+        line-height: 30px;
+      }
+      @include mobile{
+        top: 20px;
+        left: 30px;
+      }
+    }
+  }
+  .rightside-down{
+    margin: 0px 35px 50px 0px;
+    background-color: rgb(224, 3, 3);
+    color: whitesmoke;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(192, 0, 0);
+    }
+    span{
+      text-align: center;
+      position: absolute;
+      top: 223px;
+      left: 33px;
+      line-height: 37px;
+      @include pad{
+        top: 200px;
+        left: 25px;
+        line-height: 30px;
+      }
+      @include mobile{
+        top: 155px;
+        left: 17px;
+      }
+    }
   }
   .circle{
-    width: 50px;
-    height: 50px;
+    width:  150px;
+    height: 150px;
     border-radius: 50%;
+    box-shadow: 0px 0px 40px rgb(192, 192, 192);
+    font-size: 30px;
+    @include pad{
+      width: 130px;
+      height: 130px;
+      font-size: 27px;
+    }
+    @include mobile{
+      width: 100px;
+      height: 100px;
+      font-size: 23px;
+    }
   }
 }

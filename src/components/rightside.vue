@@ -2,10 +2,10 @@
   <div id="rightside">
     <div class="rightside">
       <div class="rightside-up circle">
-        線上開戶
+        <span>線上<br>開戶</span>
       </div>
       <div class="rightside-down circle">
-        加開證券戶
+        <span>加開<br>證券戶</span>
       </div>
     </div>
   </div>

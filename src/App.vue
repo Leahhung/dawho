@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <navBar/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Main/>
     <rightSide/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from './components/main.vue'
 import navBar from './components/navbar.vue'
 import rightSide from './components/rightside.vue'
+import $ from "jquery";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Main,
     navBar,
     rightSide
   }

@@ -72,6 +72,9 @@ a{
       border-radius: 80px;
     }
   }
+#app{
+  max-width: 1vh;
+}
 
 #navbar{
   display: flex;
@@ -153,6 +156,7 @@ a{
 
 #mainpage{
   margin: auto;
+  
   header{
     // width: 70vh;
     // height: 70vh;

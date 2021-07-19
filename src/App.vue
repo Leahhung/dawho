@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :style="styleChange">
     <navBar/>
     <Main/>
     <rightSide/>
@@ -18,6 +18,19 @@ export default {
     Main,
     navBar,
     rightSide
+  },
+  data() {
+    return{
+      styleChange: {
+        height: '',
+        width: ''
+      }
+    }
+  },
+  mounted() {
+    const that = this;
+    that.styleChange.height = document.body.clientHeight + "px";
+    that.styleChange.width = document.body.clientWidth + "px";
   }
 }
 </script>

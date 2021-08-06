@@ -1,0 +1,56 @@
+@mixin item {
+  .l{
+    font-size: 45px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    .red-l{
+      color: $color2;
+      font-size: 60px;
+      font-weight: bolder;
+    }
+  }
+  .s{
+    font-size: 25px;
+  }
+  .m{
+    font-size: 30px;
+    font-weight: bolder;
+    .percent{
+      font-size: 35px;
+      color: $color2;
+    }
+  }
+  .xs{
+    font-size: 18px;
+    color: gray;
+  }
+  .red-s{
+    font-size: 20px;
+    letter-spacing: -1px;
+    color: $color2;
+    .red-dollar{
+      background-color: darken($color2, 5%);
+      padding: 0px 5px;
+      border-radius: 30px;
+    }
+  }
+  .ms{
+    font-size: 17px;
+  }
+  .btn{
+    width: 230px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:$color1 ;
+    padding: 25px 45px;
+    border: 1px solid $color1;
+    border-radius: 80px;
+  }
+} 
+
+@mixin keyframes ($animationName) {
+@keyframes #{$animationName} {
+  @content;
+}
+}

@@ -1,14 +1,14 @@
 @import "breakpoint";
 @import "reset";
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap");
+@import "mixin";
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);;
 
 // color
 $color1: rgb(214, 151, 16);
 $color2: rgb(224, 3, 3);
 
 *{
-  font-family: 'Noto Serif TC', serif;
-  
+  font-family: 'cwTeXYen', sans-serif;
 }
 
 a{
@@ -16,134 +16,76 @@ a{
   text-decoration: none;
 }
 
-@mixin item {
-    .l{
-      font-size: 70px;
-      margin-bottom: 17px;
-      font-weight: bold;
-      .red-l{
-        color: $color2;
-        font-size: 100px;
-      }
-    }
-    .s{
-      font-size: 40px;
-      letter-spacing: -1px;
-    }
-    .m{
-      font-size: 50px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      .percent{
-        font-size: 70px;
-        color: $color2;
-        margin-left: 10px;
-      }
-    }
-    .xs{
-      margin-top: 60px;
-      margin-bottom: 20px;
-      font-size: 23px;
-      color: gray;
-    }
-    .red-s{
-      font-size: 30px;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
-      color: $color2;
-      .red-dollar{
-        background-color: darken($color2, 5%);
-        padding: 0px 5px;
-        border-radius: 30px;
-        margin: 0px 10px 15px 0px;
-      }
-    }
-    .ms{
-      font-size: 25px;
-      
-    }
-    .btn{
-      width: 330px;
-      font-size: 40px;
-      letter-spacing: 1px;
-      color:$color1 ;
-      padding: 40px 60px;
-      border: 1px solid $color1;
-      border-radius: 80px;
-    }
-  }
-
-
 #navbar{
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  margin: auto;
-  width: 90%;
+  position: fixed;
+  z-index: 99;
+  background-color: white;
+  width: 100%;
   .logo{
   background-image: url('./assets/logo-nav.png');
-  background-size: 75%;
+  background-size: 55%;
   background-repeat: no-repeat;
-  background-position-x: 65px;
+  background-position-x: 150px;
   background-position-y: 10px;
   width: 343px;
-  height: 124px;
+  height: 80px;
   display: block;
   text-indent: -100%;
   overflow: hidden;
   white-space: nowrap;
   }
   .nav-text{
-    font-size: 16px;
-    // margin-top: -20px;
     ul{
       display: flex;
+      margin-left: 40px;
       li{
-        
-        margin: 0px 45px 10px 45px;
+        margin: 0px 35px 10px 35px;
         display: inline-block;
-        width: 130px;
-        font-size: 25px;
-        white-space: nowrap;
+        width: 70px;
+        font-size: 15px;
+        align-items: center;
+        text-align: center;
         // text-transform: uppercase;
         & ::after{
-          margin-bottom: 5px;
-          display: block;
           content: '';
-          border-bottom: solid 3px black;
+          display: block;
+          padding-bottom: 7px;
+          border-bottom: solid 2px $color1;
           transform: scaleX(0);
-          transition: transform 250ms ease-in-out;
+          transition: transform 300ms ease-in-out;
+        }
+        & :hover{
+          color: $color1;
         }
         & :hover::after{
           transform: scaleX(1);
         }
         a{
-          text-align: center;
           display: block;
+          white-space: nowrap;
         }
       }
     }
   }
   .nav-btn{
     display: flex;
-    .btn-y{
-      border-radius: 53px;
-      background-color: rgb(214, 151, 16);
+    .btn{
+      border-radius: 30px;
       box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
-      color: whitesmoke;
-      padding: 22px;
+      padding: 15px 10px;
       margin: 0px 20px;
-      font-size: 25px;
+      font-size: 15px;
       cursor: pointer;
     }
+    .btn-y{
+      background-color: rgb(214, 151, 16);
+      color: whitesmoke;
+      font-weight: bold;
+    }
     .btn-wb{
-      border-radius: 40px;
       border: 1px solid black;
-      box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
-      padding: 18px 17px;
-      margin: 0px 20px;
-      font-size: 25px;
-      cursor: pointer;
       &:hover{
        background-color: black;
        color: whitesmoke; 
@@ -153,93 +95,194 @@ a{
 }
 
 #mainpage{
+  padding-top: 80px;
   margin: auto;
-  
   header{
-    // width: 70vh;
-    // height: 70vh;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     .slogan{
       text-align: center;
-      margin-top: 100px;
+      margin-top: 30px;
       img{
-        width: 500px;
+        width: 330px;
         margin-bottom: 10px;
       }
       span{
         display: block;
-        font-size: 60px;
-        letter-spacing: 13px;
+        font-size: 40px;
+        letter-spacing: 10px;
         font-weight: bold;
       }
     }
     .middle{
       text-align: start;
       line-height: 80px;
-      margin-top: 140px;
-      .dollar-sign{
-        font-size: 30px;
-        color: whitesmoke;
-        background-color: darken($color1, 5%);
-        padding: 5px 10px;
-        border-radius: 50%;
-        margin: 20px;
-        
-      }
-      .middle-text{
-        font-size: 40px;
-        font-weight: bold;
-        letter-spacing: 2px;
-      }
+      margin-top: 80px;
+        .dollar-sign{
+          font-size: 20px;
+          background-color: darken($color1, 5%);
+          padding: 5px 10px;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+        .middle-text{
+          font-size: 25px;
+          letter-spacing: 2px;
+        }
     }
     .header-btn{
-      width: 400px;
+      width: 270px;
       color: white;
-      font-size: 40px;
+      font-size: 25px;
+      letter-spacing: 1px;
       font-weight: bold;
-      padding: 50px 40px;
+      padding: 30px 10px;
       background-color: $color1;
+      box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
       border-radius: 70px;
       text-align: center;
-      margin-top: 170px;
+      margin-top: -150px;
+      z-index: 3;
+    }
+    .card-animation{
+      .card_black{
+        width: 370px;
+        animation-name: cblack;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        z-index: 2;
+        @include keyframes(cblack) {
+          0% {
+            transform: translate(185px, -80px);
+          }
+          50% {
+            transform: translate(185px, -150px);
+          }
+          100% {
+            transform: translate(-260px, -150px);
+          }
+        }
+      }
+      .card_white{
+        width: 370px;
+        animation-name: cwhite;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        @include keyframes(cwhite) {
+          0% {
+            transform: translate(-185px, -80px);
+          }
+          50% {
+            transform: translate(-185px, -150px);
+          }
+          100% {
+            transform: translate(260px, -150px);
+          }
+        }
+      }
     }
   }
   main{
     .item1{
-      height: 100vh;
       display: flex;
       margin: 100px;
       img{
-        width: 1100px;
-        margin-left: 50px;
+        max-height: 700px;
+        // margin-left: 30px;
       }
       .item1-right{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-left: 100px;
+        margin-left: 80px;
         .item1-btn{
-          margin-top: 150px;
+          margin-top: 90px;
         }
-        @include item
-        
+        @include item;
+        .l{
+          margin-bottom: 10px;
+          .red-l{
+            margin: 0px 5px;
+          }
+        }
+        .s{
+          margin-bottom: 45px;
+        }
+        .m{
+          .percent{
+            margin-left: 10px;
+          }
+        }
+        .xs{
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
       }
     }
     .item2{
-      height: 100vh;
       display: flex;
-      margin: auto;
+      margin: 100px 50px 100px 150px;
       img{
-        width: 1100px;
+        max-height: 700px;
+        margin-left: 50px;
       }
       .item2-left{
+        margin-top: 50px;
+        margin-left: 30px;
         .item2-btn{
-          margin-top: 110px;
+          margin-top: 70px;
         }
         @include item;
+        .l{
+          margin-bottom: 5px;
+          font-size: 50px;
+          .red-l{
+            font-size: 70px;
+            margin: 0px 5px;
+          }
+        }
+        .xs{
+          font-size: 15px;
+          margin: 40px 0px 15px 0px;
+        }
+        .m{
+          margin-bottom: 13px;
+          .percent{
+            font-size: 40px;
+            margin: 0px 25px 0px 7px;
+          }
+        }
+        .red-s{
+          margin-bottom: 5px;
+          .red-dollar{
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .item3{
+      display: flex;
+      margin: 100px;
+      img{
+        max-height: 700px;
+        // margin-left: 30px;
+      }
+      .item3-right{
+        @include item;
+      }
+    }
+    .item4{
+      display: flex;
+      margin: 100px;
+      .item4-left{
+        @include item;
+      }
+      img{
+        max-height: 700px;
       }
     }
   }
@@ -253,28 +296,23 @@ a{
         font-size: 45px;
         font-weight: bold;
       }
-      .down-right{
-        font-size: 20px;
-      }
     }
-
   }
-  
 }
 
 #rightside{
   position:fixed;
-  right: 150px;
-  bottom: 500px;
+  right: 80px;
+  bottom: 330px;
   background-color: transparent;
   @include pad{
     right: 0;
     bottom: 0;
   }
   .rightside-up{
-    margin: 0px 35px 35px 0px;
+    margin: 0px 35px 25px 0px;
     background-color: rgb(214, 151, 16);
-    color: whitesmoke;
+    color: white;
     cursor: pointer;
     &:hover{
       background-color: rgb(194, 137, 13);
@@ -282,24 +320,24 @@ a{
     span{
       text-align: center;
       position: absolute;
-      top: 37px;
-      left: 45px;
-      line-height: 37px;
+      top: 25px;
+      left: 30px;
+      line-height: 25px;
       @include pad{
-        top: 37px;
-        left: 37px;
-        line-height: 30px;
+        top: 20px;
+        left: 25px;
+        line-height: 25px;
       }
       @include mobile{
-        top: 20px;
+        top: 25px;
         left: 30px;
       }
     }
   }
   .rightside-down{
-    margin: 0px 35px 50px 0px;
+    margin: 0px 35px 30px 0px;
     background-color: rgb(224, 3, 3);
-    color: whitesmoke;
+    color: white;
     cursor: pointer;
     &:hover{
       background-color: rgb(192, 0, 0);
@@ -307,13 +345,13 @@ a{
     span{
       text-align: center;
       position: absolute;
-      top: 223px;
-      left: 33px;
-      line-height: 37px;
+      top: 150px;
+      left: 20px;
+      line-height: 27px;
       @include pad{
-        top: 200px;
-        left: 25px;
-        line-height: 30px;
+        top: 130px;
+        left: 15px;
+        line-height: 27px;
       }
       @include mobile{
         top: 155px;
@@ -322,15 +360,16 @@ a{
     }
   }
   .circle{
-    width:  150px;
-    height: 150px;
+    width:  100px;
+    height: 100px;
     border-radius: 50%;
     box-shadow: 0px 0px 40px rgb(192, 192, 192);
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
     @include pad{
-      width: 130px;
-      height: 130px;
-      font-size: 27px;
+      width: 90px;
+      height: 90px;
+      font-size: 20px;
     }
     @include mobile{
       width: 100px;

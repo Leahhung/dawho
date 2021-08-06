@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <navBar/>
+    <nav>
+      <navBar/>
+    </nav>
     <Main/>
     <rightSide/>
   </div>
@@ -10,7 +12,6 @@
 import Main from './components/main.vue'
 import navBar from './components/navbar.vue'
 import rightSide from './components/rightside.vue'
-import $ from "jquery";
 
 export default {
   name: 'App',
@@ -23,5 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "/src/assets/all.scss"
+  @import "./src/assets/all.scss";
 </style>

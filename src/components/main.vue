@@ -6,15 +6,16 @@
         <span>新世代VIP數位帳戶</span>
       </div>
       <div class="middle">
-        <div><span class="dollar-sign">💲</span><span class="middle-text">新台幣活儲最高利率</span><span class="middle-percent">1.1%</span></div>
-        <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="middle-percent">8%</span></div>
+        <div><span class="dollar-sign">💲</span><span class="middle-text">新台幣活儲最高利率</span><span class="middlepercent" ref="middlepercent" data-target="1.1"></span></div>
+        <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="middlepercent" ref="middlepercent" data-target="8"></span></div>
       </div>
+      <div class="card-animation"><img class="card_black" src="../assets/card_black.png" alt="DAWHO現金回饋信用卡"><img class="card_white" src="../assets/card_white.png" alt="DAWHO現金回饋Debit卡"></div>
       <span class="header-btn">我要當DAWHO</span>
     </header>
     <main>
       <div class="item1">
-        <img src="../assets/kv_01_img.jpeg" alt="">
-        <div class="item1-right">
+        <img src="../assets/kv_01_img.jpeg" data-aos="fade-right" alt="">
+        <div class="item1-right" data-aos="fade-left" data-aos-delay="200">
           <p class="l">養大<span class="red-l">你</span>的小錢</p>
           <p class="s">不只存錢同步養錢  小資也能成DAWHO</p>
           <p class="m">新台幣活儲最高利率<span class="percent">1.1%</span></p>
@@ -23,8 +24,8 @@
         </div>
       </div>
       <div class="item2">
-        <div class="item2-left">
-          <p class="l">做自己的<span class="red-l">卡</span>神</p>
+        <div class="item2-left" data-aos="fade-right" data-aos-delay="200">
+          <p class="l" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">做自己的<span class="red-l">卡</span>神</p>
           <p class="s">刷卡消費變存款</p>
           <p class="xs">一般消費最高</p>
           <p class="m">國內<span class="percent">2%</span>國外<span class="percent">3%</span></p>
@@ -38,10 +39,26 @@
           <p class="ms">大大等級上限300元/每月帳單</p>
           <p class="item2-btn btn">了解更多＞</p>
         </div>
-        <img src="../assets/kv_02_img.jpeg" alt="">
+        <img src="../assets/kv_02_img.jpeg" alt="" data-aos="fade-left" data-aos-delay="200">
       </div>
-      <div class="item3"></div>
-      <div class="item4"></div>
+      <div class="item3">
+        <img src="../assets/kv_06_img.jpeg" alt="" data-aos="fade-right" data-aos-delay="200">
+        <div class="item3-right">
+          <div class="l">放<span class="red-l">大</span>你的夢想</div>
+          <div class="s">早上進件，下午領現</div>
+          <div class="m">利率最低<span class="percent">0.1%</span>起</div>
+          <p class="item2-btn btn">了解更多＞</p>
+        </div>
+      </div>
+      <div class="item4">
+        <div class="item4-left">
+          <div class="l">壯<span class="red-l">大</span>你的投資</div>
+          <div class="s">多省即先賺 不浪費重要的每一分錢！</div>
+          <div class="m">下單永豐ibrAin即想帳管費<span class="percent">0元</span></div>
+          <div class="m">精選基金申購手續費<span class="percent">0元</span></div>
+        </div>
+        <img src="../assets/kv_05_img.jpeg" alt="" data-aos="fade-left" data-aos-delay="200">
+      </div>
       <div class="item5"></div>
     </main>
     <footer>
@@ -79,35 +96,35 @@
 
 <script>
 export default {
-  data() {
-    return{
-      text: '123'
+  name: 'mainpage',
+  data () {
+    return {
+      msg: '123'
     }
-  },
+  }
   // methods: {
   //   counters() {
-  //     const counters = document.querySelector('.counter');
-  //     counters.forEach(function(counter) {
-  //       counter.innerText = '0';
-  //       const updateCounter = function() {
-  //         const target = +counter.getAttribute('data-targett');
-  //         const c = +counter.innerText;
-  //         const increment = target / 200;
-  //         if(c < target) {
-  //           counter.innerText = `${Math.ceil(c + increment)}`;
-  //           setTimeout(updateCounter, 0.1)
-  //         } else {
-  //           counter.innerText = target
-  //         }
-  //       }
-  //     });
+  //     const counters = this.$refs.middlepercent;
+  //     counters.forEach(counter => {
+  //         middlepercent.innerText = '0';
+  //         const updateCounter = () => {
+  //           const target = +middlepercent.getAttribute('data-target');
+  //           const c = +middlepercent.innerText;
+  //           const increment = target / 200;
+  //           if(c < target) {
+  //             middlepercent.innerText = `${Math.ceil(c+increment)}`;
+  //             setTimeout(updateCounter, 0.1);
+  //           } else {
+  //             middlepercent.innerText = target;
+  //           }
+  //         };
+  //       });
   //   }
   // },
-  // created() {
+  // mounted() {
   //   this.counters()
   // },
 }
-
 
 </script>
 

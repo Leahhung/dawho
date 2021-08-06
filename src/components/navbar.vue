@@ -12,9 +12,9 @@
       </ul>
     </div>
     <div class="nav-btn">
-      <span class="btn-y">我要當DAWHO</span>
-      <span class="btn-wb">進度查詢</span>
-      <span class="btn-wb">立即下載</span>
+      <span class="btn btn-y">我要當DAWHO</span>
+      <span class="btn btn-wb">進度查詢</span>
+      <span class="btn btn-wb">立即下載</span>
     </div>
     <!-- <div class="nav-ham"><a href="javascript:;" class="menu-ham"</div> -->
   </div>

@@ -6,8 +6,8 @@
         <span>新世代VIP數位帳戶</span>
       </div>
       <div class="middle">
-        <div><span class="dollar-sign">💲</span><span class="middle-text">新台幣活儲最高利率</span><span class="middlepercent" ref="middlepercent" data-target="1.1"></span></div>
-        <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="middlepercent" ref="middlepercent" data-target="8"></span></div>
+        <div><span class="dollar-sign">💲</span><span class="middle-text">新台幣活儲最高利率</span><span class="counter" data-target="1.1"></span><span class="percent">%</span></div>
+        <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="counternew" data-target="8"></span><span class="percent">%</span></div>
       </div>
       <div class="card-animation"><img class="card_black" src="../assets/card_black.png" alt="DAWHO現金回饋信用卡"><img class="card_white" src="../assets/card_white.png" alt="DAWHO現金回饋Debit卡"></div>
       <span class="header-btn">我要當DAWHO</span>
@@ -120,29 +120,51 @@ export default {
     return {
       msg: '123'
     }
+  },
+  mounted () {
+    this.counterUp()
+    this.counterDown()
+  },
+  methods: {
+    counterUp () {
+      const counters = document.querySelectorAll('.counter')
+      counters.forEach(counter => {
+        counter.innerText = '0' // 先放入0
+        const updateCounter = () => {
+          const target = +counter.getAttribute('data-target')
+          // console.log(typeof target, target)
+          const c = +counter.innerText
+          const increment = target / 5
+          // console.log(increment)
+          if (c < target) {
+            counter.innerText = `${(c + increment).toFixed(1)}`
+            setTimeout(updateCounter, 100)
+          } else {
+            counter.innerText = target
+          }
+        }
+        updateCounter()
+      })
+    },
+    counterDown () {
+      const counters = document.querySelectorAll('.counternew')
+      counters.forEach(counter => {
+        counter.innerText = '0'
+        const updateCounter = () => {
+          const target = +counter.getAttribute('data-target')
+          const c = +counter.innerText
+          const increment = target / 30
+          if (c < target) {
+            counter.innerText = `${Math.ceil(c + increment)}`
+            setTimeout(updateCounter, 100)
+          } else {
+            counter.innerText = target
+          }
+        }
+        updateCounter()
+      })
+    }
   }
-  // methods: {
-  //   counters() {
-  //     const counters = this.$refs.middlepercent;
-  //     counters.forEach(counter => {
-  //         middlepercent.innerText = '0';
-  //         const updateCounter = () => {
-  //           const target = +middlepercent.getAttribute('data-target');
-  //           const c = +middlepercent.innerText;
-  //           const increment = target / 200;
-  //           if(c < target) {
-  //             middlepercent.innerText = `${Math.ceil(c+increment)}`;
-  //             setTimeout(updateCounter, 0.1);
-  //           } else {
-  //             middlepercent.innerText = target;
-  //           }
-  //         };
-  //       });
-  //   }
-  // },
-  // mounted() {
-  //   this.counters()
-  // },
 }
 
 </script>

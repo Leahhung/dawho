@@ -22,77 +22,157 @@ a{
 
 #navbar{
   display: flex;
-  align-items: center;
+  justify-content: center;
+  // align-items: center;
   position: fixed;
   z-index: 99;
   background-color: white;
   width: 100%;
+  padding-top: 20px;
   .logo{
-  background-image: url('./assets/logo-nav.png');
-  background-size: 55%;
-  background-repeat: no-repeat;
-  background-position-x: 150px;
-  background-position-y: 10px;
-  width: 343px;
-  height: 80px;
-  display: block;
-  text-indent: -100%;
-  overflow: hidden;
-  white-space: nowrap;
+    @include pad {
+      max-height: 70%;
+      z-index: 10;
+    }
   }
-  .nav-text{
-    ul{
+  .nav-items{
+    // display: flex;
+    .nav-text{
+      padding-top: 10px;
+      ul{
+        display: flex;
+        margin-left: 40px;
+        li{
+          margin: 0px 35px 10px 35px;
+          width: 70px;
+          font-size: 15px;
+          align-items: center;
+          text-align: center;
+          // border: 1px solid black;
+          & ::after{
+            content: '';
+            display: block;
+            padding-bottom: 7px;
+            border-bottom: solid 2px $color1;
+            transform: scaleX(0);
+            transition: transform 300ms ease-in-out;
+          }
+          & :hover{
+            color: $color1;
+          }
+          & :hover::after{
+            transform: scaleX(1);
+          }
+          a{
+            display: block;
+            white-space: nowrap;
+          }
+        }
+      }
+      @include pad{
+        // display: none;
+      }
+    }
+    .nav-btn{
       display: flex;
-      margin-left: 40px;
-      li{
-        margin: 0px 35px 10px 35px;
-        display: inline-block;
-        width: 70px;
+      .btn{
+        border-radius: 30px;
+        box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
+        padding: 15px 10px;
+        margin: 0px 20px;
         font-size: 15px;
-        align-items: center;
-        text-align: center;
-        // text-transform: uppercase;
-        & ::after{
-          content: '';
-          display: block;
-          padding-bottom: 7px;
-          border-bottom: solid 2px $color1;
-          transform: scaleX(0);
-          transition: transform 300ms ease-in-out;
+        cursor: pointer;
+      }
+      .btn-y{
+        background-color: rgb(214, 151, 16);
+        color: whitesmoke;
+        font-weight: bold;
+      }
+      .btn-wb{
+        border: 1px solid black;
+        transition: background-color 0.3s ease;
+        &:hover{
+         background-color: black;
+         color: whitesmoke; 
         }
-        & :hover{
-          color: $color1;
+      }
+      @include pad{
+        // display: none;
+      }
+    }
+    @include pad{
+      position: absolute;
+      background-color: white;
+      transform: translateX(-110%);
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      // border: black solid;
+      transition: all 0.8s ease-in-out;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .nav-text{
+        ul{
+          flex-direction: column;
+          text-align: center;
+          li{
+            border: black 1px solid;
+          }
         }
-        & :hover::after{
-          transform: scaleX(1);
-        }
-        a{
-          display: block;
-          white-space: nowrap;
+      }
+      .nav-btn{
+        flex-direction: column;
+        .btn{
+          width: 150px;
         }
       }
     }
   }
-  .nav-btn{
-    display: flex;
-    .btn{
-      border-radius: 30px;
-      box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
-      padding: 15px 10px;
-      margin: 0px 20px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-    .btn-y{
-      background-color: rgb(214, 151, 16);
-      color: whitesmoke;
-      font-weight: bold;
-    }
-    .btn-wb{
-      border: 1px solid black;
-      &:hover{
-       background-color: black;
-       color: whitesmoke; 
+  .nav-ham{
+    display: none;
+    @include pad{
+      display: block;
+      width: 50px;
+      height: 50px;
+      padding: 20px 5px;
+      // background-color: black;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 10;
+      span{
+        &::before, &::after{
+          content: '';
+          position: absolute;
+        }
+        &,
+        &::before, &::after{
+          width: 35px;
+          height: 5px;
+          display: block;
+          background-color:$color1;
+          transition: all 0.6s ease;
+        }
+        &::before{
+          margin-top: 10px;
+        }
+        &::after{
+          margin-top: -10px;
+        }
+      }
+      &.is-change{
+        span {
+          background-color: rgba(0, 0, 0, 0);
+          &::before {
+            margin-top: 0;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            margin-top: 0;
+            transform: rotate(45deg);
+          }
+        }
       }
     }
   }
@@ -134,6 +214,11 @@ a{
         .middle-text{
           font-size: 25px;
           letter-spacing: 2px;
+        }
+        .counter, .counternew, .percent{
+          color: $color2;
+          font-size: 35px;
+          margin-left: 3px;
         }
     }
     .header-btn{
@@ -491,7 +576,7 @@ a{
         left: 25px;
         line-height: 25px;
       }
-      @include mobile{
+      @include phone{
         top: 25px;
         left: 30px;
       }
@@ -516,7 +601,7 @@ a{
         left: 15px;
         line-height: 27px;
       }
-      @include mobile{
+      @include phone{
         top: 155px;
         left: 17px;
       }
@@ -534,7 +619,7 @@ a{
       height: 90px;
       font-size: 20px;
     }
-    @include mobile{
+    @include phone{
       width: 100px;
       height: 100px;
       font-size: 23px;

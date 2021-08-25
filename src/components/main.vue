@@ -13,9 +13,6 @@
       <span class="header-btn">我要當DAWHO</span>
     </header>
     <main>
-      <div class="arrow">
-        ↓
-      </div>
       <div class="item1">
         <img src="../assets/kv_01_img.jpeg" data-aos="fade-right" alt="">
         <div class="item1-right" data-aos="fade-left" data-aos-delay="200">

@@ -58,10 +58,6 @@ a{
       ul{
         display: flex;
         margin-left: 40px;
-        // & :nth-child(2) {
-        //   margin-left: 20px;
-        //   margin-right: -20px;
-        // }
         li{
           margin: 0px 35px 10px 35px;
           width: 70px;
@@ -69,6 +65,7 @@ a{
           text-align: center;
           font-size: 18px;
           white-space: nowrap;
+          // border: black 1px solid;
           & ::after{
             content: '';
             display: block;
@@ -83,10 +80,6 @@ a{
           & :hover::after{
             transform: scaleX(1);
           }
-          a{
-            
-            // border: solid 1px black;
-          }
         }
       }
       @include pad{
@@ -96,16 +89,30 @@ a{
           flex-direction: column;
           margin-left: 0px;
           // border: solid 1px black;
+          & :nth-child(2) {
+            margin-left: -20px;
+            margin-right: 20px;
+            & ::after{
+              margin-right: -20px;
+              margin-left: 20px;
+            }
+          }
+          & :nth-child(1) {
+            margin-left: -20px;
+            margin-right: 20px;
+            & ::after{
+              margin-right: -20px;
+              margin-left: 20px;
+            }
+          }
           li{
             text-align: center;
-            border: black 1px solid;
             margin: 20px 0px;
             align-self: center;
             width: 80px;
             // padding-right: 20px;
             a{
               display: block;
-              border: 1px solid black;
               text-align: center;
               // white-space: normal;
             }
@@ -142,7 +149,6 @@ a{
       @include pad{
         flex-direction: column;
         margin-top: 30px;
-        border: 1px solid black;
         .btn-y{
           width: 160px;
           text-align: center;
@@ -416,7 +422,19 @@ a{
               transform: translate(60px, 80px);
             }
             100% {
-              transform: translate(120px, 5px);
+              transform: translate(120px, -10px);
+            }
+          }
+        }
+      }
+      @include tiny{
+        .card_black{
+          @include keyframes(cblack) {
+            0% {
+              transform: translate(40px, -30px);
+            }
+            100% {
+              transform: translate(40px, -75px);
             }
           }
         }

@@ -9,10 +9,13 @@
         <div><span class="dollar-sign">💲</span><span class="middle-text">新台幣活儲最高利率</span><span class="counter" data-target="1.1"></span><span class="percent">%</span></div>
         <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="counternew" data-target="8"></span><span class="percent">%</span></div>
       </div>
-      <div class="card-animation"><img class="card_black" src="../assets/card_black.png" alt="DAWHO現金回饋信用卡"><img class="card_white" src="../assets/card_white.png" alt="DAWHO現金回饋Debit卡"></div>
+      <div class="card-animation"><img class="card_white" src="../assets/card_white.png" alt="DAWHO現金回饋Debit卡"><img class="card_black" src="../assets/card_black.png" alt="DAWHO現金回饋信用卡"></div>
       <span class="header-btn">我要當DAWHO</span>
     </header>
     <main>
+      <div class="arrow">
+        ↓
+      </div>
       <div class="item1">
         <img src="../assets/kv_01_img.jpeg" data-aos="fade-right" alt="">
         <div class="item1-right" data-aos="fade-left" data-aos-delay="200">
@@ -66,8 +69,8 @@
           <div class="l" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">擴<span class="red-l">大</span>你的便利</div>
           <div class="s">想轉就轉 想提就提 毫無顧忌</div>
           <div class="m">跨行提款＆轉帳 每月免費共<span class="percent">20次</span></div>
-          <div class="red-s">每月優惠減免次數期間為當月16日~次月15日(優惠僅跨行提款及跨行轉帳，不含繳費、跨行存款等)</div>
-          <p class="item4-btn btn">了解更多＞</p>
+          <div class="red-s">每月優惠減免次數期間為當月16日~次月15日<br>(優惠僅跨行提款及跨行轉帳，不含繳費、跨行存款等)</div>
+          <p class="item5-btn btn">了解更多＞</p>
         </div>
       </div>
     </main>

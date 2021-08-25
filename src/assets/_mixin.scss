@@ -9,9 +9,20 @@
       font-size: 60px;
       font-weight: bolder;
     }
+    @include pad{
+      font-size: 30px;
+      font-weight: bold;
+      .red-l{
+        font-size: 50px;
+        font-weight: bolder;
+      }
+    }
   }
   .s{
     font-size: 25px;
+    @include pad{
+      font-size: 18px;
+    }
   }
   .m{
     font-size: 30px;
@@ -20,10 +31,19 @@
       font-size: 35px;
       color: $color2;
     }
+    @include pad{
+      font-size: 23px;
+      .percent{
+        font-size: 30px;
+      }
+    }
   }
   .xs{
     font-size: 18px;
-    color: gray;
+    color: rgb(146, 146, 146);
+    @include pad{
+      font-size: 15px;
+    }
   }
   .red-s{
     font-size: 20px;
@@ -34,9 +54,19 @@
       padding: 0px 5px;
       border-radius: 30px;
     }
+    @include pad{
+      font-size: 17px;
+      .red-dollar{
+        padding: 0px 3px;
+        font-size: 15px;
+      }
+    }
   }
   .ms{
     font-size: 17px;
+    @include pad{
+      font-size: 15px;
+    }
   }
   .btn{
     border: 1px solid $color1;
@@ -69,6 +99,14 @@
         &:after{
           width: 110%;
         }
+    }
+    @include pad{
+      font-size: 18px;
+      width: 180px;
+      padding: 20px 40px
+    }
+    @include phone{
+      align-self: center
     }
   }
 } 

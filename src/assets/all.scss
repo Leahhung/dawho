@@ -31,9 +31,13 @@ a{
   padding-top: 20px;
   padding-bottom: 10px;
   .logo{
+    margin-right: 60px;
+    margin-left: -20px;
     @include pad {
       z-index: 10;
       text-align: center;
+      margin-right: 0px;
+      margin-left: 0px;
       img{
       width: 60%;
       }
@@ -55,15 +59,45 @@ a{
     }
     .nav-text{
       padding-top: 10px;
+      // border: steelblue 3px solid;
+      margin-right: -10px;
       ul{
         display: flex;
         margin-left: 40px;
+        margin-right: -20px;
+        // border: tan 2px solid;
+        & :nth-child(1){
+          margin-right: 60px;
+          & ::after{
+            margin-right: -20px;
+            margin-left: 25px;
+          }
+        }
+        & :nth-child(2){
+          margin-right: 40px;
+          & ::after{
+            margin-right: -20px;
+            margin-left: 25px;
+          }
+        }
+        & :nth-child(3){
+          margin-left: 40px;
+          a{
+            margin-left: -5px;
+          }
+        }
+        & :nth-child(4){
+          margin-left: -10px;
+          a{
+            margin-left: -5px;
+          }
+        }
         li{
-          margin: 0px 35px 10px 35px;
+          margin: 0px 40px 10px 20px;
           width: 70px;
           font-size: 15px;
           text-align: center;
-          font-size: 18px;
+          font-size: 16px;
           white-space: nowrap;
           // border: black 1px solid;
           & ::after{
@@ -84,37 +118,49 @@ a{
       }
       @include pad{
         // border: black 1px solid;
-        margin-top: 5%;
+        margin-top: 10%;
         ul{
           flex-direction: column;
-          margin-left: 0px;
+          margin: auto;
+          width: fit-content;
           // border: solid 1px black;
           & :nth-child(2) {
-            margin-left: -20px;
-            margin-right: 20px;
+            // margin-left: -20px;
+            // margin-right: 20px;
             & ::after{
               margin-right: -20px;
               margin-left: 20px;
             }
           }
           & :nth-child(1) {
-            margin-left: -20px;
-            margin-right: 20px;
+            // margin-left: -20px;
+            // margin-right: 20px;
+            padding-left: 10px;
             & ::after{
               margin-right: -20px;
               margin-left: 20px;
             }
+          }
+          & :nth-child(3){
+            margin-left: 0px;
+          }
+          & :nth-child(4){
+            margin-left: 0px;
           }
           li{
             text-align: center;
             margin: 20px 0px;
             align-self: center;
             width: 80px;
+            // border: 2px solid red;
             // padding-right: 20px;
             a{
               display: block;
-              text-align: center;
               // white-space: normal;
+              // border: 2px cadetblue solid;
+              padding-left: 10px;
+              padding-right: -20px;
+              width: 100%;
             }
           }
         }
@@ -123,11 +169,12 @@ a{
     .nav-btn{
       display: flex;
       align-items: center;
+      margin-right: -60px;
       // border: solid 1px rgb(134, 93, 93);
       .btn{
         border-radius: 30px;
         box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
-        padding: 15px 10px;
+        padding: 14px 10px;
         margin: 0px 20px;
         font-size: 15px;
         cursor: pointer;
@@ -148,7 +195,7 @@ a{
       }
       @include pad{
         flex-direction: column;
-        margin-top: 30px;
+        margin: auto 0;
         .btn-y{
           width: 160px;
           text-align: center;
@@ -318,6 +365,7 @@ a{
       text-align: center;
       margin-top: -150px;
       z-index: 3;
+      cursor: pointer;
       @include pad{
         font-size: 20px;
         width: 210px;

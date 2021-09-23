@@ -184,6 +184,30 @@ a{
         background-color: rgb(214, 151, 16);
         color: whitesmoke;
         font-weight: bold;
+        position: relative;
+        z-index: 2;
+        transition: all 0.2s linear;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 40%;
+          height: 100%;
+          border-radius: 40px;
+          background: #8d6500;
+          z-index: -1;
+          opacity: 0;
+          transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        &:hover{
+          &:before{
+            opacity: 1;
+            width: 100%;
+          }
+        }
       }
       .btn-wb{
         border: 1px solid black;
@@ -361,11 +385,34 @@ a{
       padding: 30px 10px;
       background-color: $color1;
       box-shadow: 5px 10px 20px rgba(128, 128, 128, 0.507);
-      border-radius: 70px;
+      border-radius: 40px;
       text-align: center;
       margin-top: -150px;
-      z-index: 3;
+      z-index: 2;
       cursor: pointer;
+      position: relative;
+      transition: all 0.2s linear;
+      &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 40%;
+        height: 100%;
+        border-radius: 40px;
+        background-color: #8d6500;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+      }
+      &:hover{
+        &:before{
+          opacity: 1;
+          width: 100%;
+        }
+      }
       @include pad{
         font-size: 20px;
         width: 210px;

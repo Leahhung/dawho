@@ -10,7 +10,7 @@
         <div><span class="dollar-sign">💲</span><span class="middle-text">信用卡現金回饋最高</span><span class="counternew" data-target="8"></span><span class="percent">%</span></div>
       </div>
       <div class="card-animation"><img class="card_white" src="../assets/card_white.png" alt="DAWHO現金回饋Debit卡"><img class="card_black" src="../assets/card_black.png" alt="DAWHO現金回饋信用卡"></div>
-      <span class="header-btn">我要當DAWHO</span>
+      <a class="header-btn">我要當DAWHO</a>
     </header>
     <main>
       <div class="item1">
@@ -20,7 +20,9 @@
           <p class="s">不只存錢同步養錢  小資也能成DAWHO</p>
           <p class="m">新台幣活儲最高利率<span class="percent">1.1%</span></p>
           <p class="xs">新台幣50萬元以內</p>
-          <p class="item1-btn btn">了解更多＞</p>
+          <a class="item1-btn btn">
+            了解更多＞
+            </a>
         </div>
       </div>
       <div class="item2">
